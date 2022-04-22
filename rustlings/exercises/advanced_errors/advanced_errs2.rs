@@ -49,6 +49,7 @@ impl From<ParseFloatError> for ParseClimateError {
 }
 
 // impl Error for ParseClimateError {}
+impl Error for ParseClimateError {}
 
 // The `Display` trait allows for other code to obtain the error formatted
 // as a user-visible string.
@@ -104,7 +105,6 @@ impl FromStr for Climate {
 
 // Don't change anything below this line (other than to enable ignored
 // tests).
-impl Error for ParseClimateError {}
 
 fn main() -> Result<(), Box<dyn Error>> {
     println!("{:?}", "Hong Kong,1999,25.7".parse::<Climate>()?);
